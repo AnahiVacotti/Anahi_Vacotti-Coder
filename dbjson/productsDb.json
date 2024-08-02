@@ -1,0 +1,38 @@
+[
+	{
+		"title": "speed",
+		"description": "regalo",
+		"code": "53333f824",
+		"price": "700050",
+		"stock": "17",
+		"category": "uwu",
+		"id": 3
+	},
+	{
+		"title": "speed",
+		"description": "regalo",
+		"code": "53333f824",
+		"price": "700050",
+		"stock": "17",
+		"category": "uwu",
+		"id": 4
+	},
+	{
+		"title": "coca",
+		"description": "regalo",
+		"code": "12",
+		"price": "700050",
+		"stock": "17",
+		"category": "uwu",
+		"id": 5
+	},
+	{
+		"title": "agua",
+		"description": "regalo",
+		"code": "312",
+		"price": "700050",
+		"stock": "17",
+		"category": "uwu",
+		"id": 6
+	}
+]
