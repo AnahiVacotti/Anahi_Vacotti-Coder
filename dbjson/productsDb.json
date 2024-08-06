@@ -1,20 +1,20 @@
 [
 	{
-		"title": "speed",
-		"description": "regalo",
-		"code": "53333f824",
-		"price": "700050",
-		"stock": "17",
-		"category": "uwu",
+		"title": "agua tonica",
+		"description": "bebida",
+		"code": "912",
+		"price": "2",
+		"stock": "4",
+		"category": "nuevedediciembre",
 		"id": 3
 	},
 	{
-		"title": "speed",
-		"description": "regalo",
-		"code": "53333f824",
-		"price": "700050",
-		"stock": "17",
-		"category": "uwu",
+		"title": "Helado de frutilla",
+		"description": "Dulce",
+		"code": "666",
+		"price": "3500",
+		"stock": "9999",
+		"category": "Postres",
 		"id": 4
 	},
 	{

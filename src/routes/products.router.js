@@ -20,6 +20,19 @@ router.get('/', async (req, res)=> {
     }
 })
 
+
+router.get('/:pid', async (req, res) =>{
+    try{
+        const productId = parseInt(req.params.pid, 10);
+        const product = await productsManager.getProductById(productId);
+        res.send({status: 'success', data: product})
+    }
+    catch(error){
+        console.log (error)
+        res.status(500).send({ status: 'error', message: 'Error al obtener el producto' });
+    }
+})
+
 router.post ('/', async(req, res)=>{
     try {
         const { body } = req
@@ -41,6 +54,24 @@ router.delete('/:id', async (req, res) => {
         console.log(error);
         res.status(500).send({ status: 'error', message: 'Error al eliminar el producto' });
     }
-});
+})
+
+router.put('/:pid', async (req, res) => {
+    try {
+      const productId = parseInt(req.params.pid, 10);
+      const updatedFields = req.body;
+  
+      // Asegurarse de que el ID no se puede actualizar
+      if (updatedFields.id) {
+        delete updatedFields.id;
+      }
+  
+      const updatedProduct = await productsManager.updateProduct(productId, updatedFields);
+      res.send({ status: 'success', data: updatedProduct });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send({ status: 'error', message: 'Error al actualizar el producto' });
+    }
+  });
 
 module.exports = router; 
