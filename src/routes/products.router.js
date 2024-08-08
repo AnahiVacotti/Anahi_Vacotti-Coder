@@ -45,6 +45,7 @@ router.post ('/', async(req, res)=>{
     }
 })
 
+
 router.delete('/:id', async (req, res) => {
     try {
         const productId = parseInt(req.params.id, 10);
