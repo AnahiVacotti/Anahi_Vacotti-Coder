@@ -1,0 +1,56 @@
+[
+	{
+		"title": "agua tonica",
+		"description": "bebida",
+		"code": "912",
+		"price": "2",
+		"stock": "4",
+		"category": "nuevedediciembre",
+		"id": 3
+	},
+	{
+		"title": "Helado de frutilla",
+		"description": "Dulce",
+		"code": "666",
+		"price": "3500",
+		"stock": "9999",
+		"category": "Postres",
+		"id": 4
+	},
+	{
+		"title": "coca",
+		"description": "regalo",
+		"code": "12",
+		"price": "700050",
+		"stock": "17",
+		"category": "uwu",
+		"id": 5
+	},
+	{
+		"title": "agua",
+		"description": "regalo",
+		"code": "312",
+		"price": "700050",
+		"stock": "17",
+		"category": "uwu",
+		"id": 6
+	},
+	{
+		"title": "Helado de Vainilla",
+		"description": "Dulce",
+		"code": "444",
+		"price": "3500",
+		"stock": "9999",
+		"category": "Postres",
+		"id": 7
+	},
+	{
+		"title": "Helado de Pera",
+		"description": "Dulce",
+		"code": "444",
+		"price": "3500",
+		"stock": "9999",
+		"category": "Postres",
+		"id": 8
+	}
+]
