@@ -10,12 +10,22 @@ const productsRouter = require('./routes/products.router.js')(io);
 const cartsRouter = require('./routes/carts.router.js');
 const handlebars = require('express-handlebars');
 const viewsRouter = require('./routes/views.router.js');
+const sessionRouter = require ('./routes/sessions.router.js');
 const { connectDB } = require('./config/index.js');
 const session = require('express-session');
+const pruebasRouter = require ('./routes/pruebas.router.js')
+const cookieParser = require ('cookie-parser')
 
-// Configurar express para manejar JSON y formularios
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+//palabra secreta debe estar en el .env
+app.use (cookieParser('clavesecreta'))
+app.use (session({
+    secret:'clavesecreta', 
+    resave: true,
+    saveUninitialized:true
+}))
 
 // Configuración del motor de plantillas
 app.engine('handlebars', handlebars.engine());
@@ -28,13 +38,8 @@ connectDB();
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);
 app.use('/', viewsRouter);
-
-app.use(session({
-    secret: 'secretcoder',
-    resave: true,
-    saveUninitialized: true
-}));
-
+app.use ('/', pruebasRouter);
+app.use ('/api/sessions', sessionRouter);
 // Socket.io para la lista de productos en tiempo real
 const productsManager = new ProductsManager(io);
 
@@ -44,8 +49,6 @@ io.on('connection', async (socket) => {
     // Emitir lista de productos al conectar
     const products = await productsManager.getProducts({ limit: 10 });
     socket.emit('productList', products.payload);
-
-    // Aquí puedes manejar otros eventos de WebSocket, como adición/eliminación de productos
 });
 
 server.listen(PORT, () => {
